@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>TitanChatX</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+/* BODY */
+
+body{
+margin:0;
+font-family:Segoe UI;
+color:white;
+background:#020617;
+overflow-x:hidden;
+}
+
+/* STARS */
+
+#stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+background:linear-gradient(90deg,#00eaff,#8b5cf6);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.links a{
+margin-left:20px;
+color:white;
+text-decoration:none;
+}
+
+/* HERO */
+
+header{
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
+url("hero-banner.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero-title{
+font-size:90px;
+background:linear-gradient(90deg,#00eaff,#8b5cf6);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero-btn{
+padding:15px 40px;
+border:none;
+border-radius:10px;
+background:#00eaff;
+color:black;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* SECTIONS */
+
+section{
+max-width:1200px;
+margin:auto;
+padding:100px 20px;
+text-align:center;
+margin-top:80px;
+}
+
+h2{
+color:#00eaff;
+text-shadow:0 0 10px #00eaff;
+}
+
+/* CHARACTERS */
+
+.characters{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.character{
+background:#0c1428;
+padding:20px;
+border-radius:15px;
+width:260px;
+box-shadow:0 0 20px #00eaff;
+}
+
+.character img{
+width:100%;
+border-radius:10px;
+}
+
+/* SLIDER */
+
+.slider{
+width:900px;
+height:500px;
+margin:auto;
+position:relative;
+overflow:hidden;
+border-radius:15px;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+animation:slider 15s infinite;
+}
+
+.slide:nth-child(2){animation-delay:5s;}
+.slide:nth-child(3){animation-delay:10s;}
+
+@keyframes slider{
+0%{opacity:0}
+10%{opacity:1}
+30%{opacity:1}
+40%{opacity:0}
+100%{opacity:0}
+}
+
+/* MAP */
+
+#map img{
+width:800px;
+border-radius:15px;
+}
+
+/* STATS */
+
+.stats{
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.stat{
+background:#0c1428;
+padding:30px;
+border-radius:15px;
+width:200px;
+box-shadow:0 0 15px #9333ea;
+}
+
+/* MOBILE */
+
+.phones{
+display:flex;
+gap:40px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.phones img{
+width:250px;
+}
+
+/* POPUP */
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+}
+
+.popup-content{
+background:#0c1428;
+padding:20px;
+border-radius:15px;
+}
+
+iframe{
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+margin-top:80px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<nav class="navbar">
+
+<div class="logo">⚡ TitanChatX</div>
+
+<div class="links">
+<a href="#characters">Characters</a>
+<a href="#map">Map</a>
+</div>
+
+</nav>
+
+<header>
+
+<h1 class="hero-title">TitanChatX</h1>
+
+<p>Chat. Play. Dominate.</p>
+
+<button class="hero-btn" onclick="openForm()">
+JOIN EARLY ACCESS
+</button>
+
+</header>
+
+<section id="characters">
+
+<h2>Characters</h2>
+
+<div class="characters">
+
+<div class="character">
+<img src="nova.jpg">
+<h3>NOVA</h3>
+</div>
+
+<div class="character">
+<img src="valkyr.jpg">
+<h3>VALKYR</h3>
+</div>
+
+<div class="character">
+<img src="sentinel.jpg">
+<h3>SENTINEL</h3>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Gameplay Showcase</h2>
+
+<div class="slider">
+
+<img src="game1.jpg" class="slide">
+<img src="game2.jpg" class="slide">
+<img src="game3.jpg" class="slide">
+
+</div>
+
+</section>
+
+<section id="map">
+
+<h2>Battle Map</h2>
+
+<img src="map.jpg">
+
+</section>
+
+<section>
+
+<h2>Community Stats</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3 id="playerCount">0</h3>
+<p>Players Waiting</p>
+</div>
+
+<div class="stat">
+<h3>10+</h3>
+<p>Characters</p>
+</div>
+
+<div class="stat">
+<h3>3</h3>
+<p>Game Modes</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Mobile Experience</h2>
+
+<div class="phones">
+
+<img src="mobile1.png">
+<img src="mobile2.png">
+
+</div>
+
+</section>
+
+<footer>
+
+<p>TitanChatX © 2026</p>
+
+</footer>
+
+<!-- POPUP FORM -->
+
+<div id="formPopup" class="popup">
+
+<div class="popup-content">
+
+<iframe
+src="https://docs.google.com/forms/d/e/1FAIpQLSdk9UgkeR5-0Za4XnLcYYY1tOyCP2I0i_bjjutzjc9aNZfCkw/viewform?embedded=true" width="500" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
+
+</div>
+
+</div>
+
+<script>
+
+/* POPUP */
+
+function openForm(){
+document.getElementById("formPopup").style.display="flex";
+}
+
+/* PLAYER COUNTER */
+
+let count = 0;
+let target = 15000;
+
+function updateCounter(){
+
+let counter = document.getElementById("playerCount");
+
+let interval = setInterval(function(){
+
+count += 200;
+
+if(count >= target){
+count = target;
+clearInterval(interval);
+}
+
+counter.innerText = count + "+";
+
+},20);
+
+}
+
+updateCounter();
+
+/* STARS */
+
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let stars = [];
+
+for(let i=0;i<200;i++){
+
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2
+});
+
+}
+
+function drawStars(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="white";
+
+stars.forEach(s=>{
+
+ctx.beginPath();
+ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+ctx.fill();
+
+});
+
+}
+
+setInterval(drawStars,50);
+
+</script>
+
+</body>
+
+</html>
