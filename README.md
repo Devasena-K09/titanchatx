@@ -62,6 +62,9 @@ Early access waitlist is available on the TitanChatX website.
 Players can join the waitlist to receive updates and early access to the platform.
 
 ---
+## TitanChatX Website Preview
+
+![TitanChatX Preview](titanchatx-preview.png)
 
 ## Vision
 
