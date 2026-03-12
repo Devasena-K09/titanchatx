@@ -70,9 +70,6 @@ TitanChatX aims to merge social interaction and competitive gaming into a single
 The project explores how communication and entertainment can coexist seamlessly in a unified digital experience.
 
 ---
-## TitanChatX Website Preview
-
-![TitanChatX Preview](titanchatx-preview.png)
 
 ## Author
 
